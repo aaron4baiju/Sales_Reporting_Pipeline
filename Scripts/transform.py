@@ -8,8 +8,8 @@ def get_delta(new_df, old_df, timestamp_col='LastUpdated'):
         return new_df
 
     # Convert columns to datetime if needed
-    new_df[timestamp_col] = pd.to_datetime(new_df[timestamp_col])
-    old_df[timestamp_col] = pd.to_datetime(old_df[timestamp_col])
+    new_df[timestamp_col] = pd.to_datetime(new_df[timestamp_col], format='mixed', dayfirst=True, errors='coerce')
+    old_df[timestamp_col] = pd.to_datetime(old_df[timestamp_col], format='mixed', dayfirst=True, errors='coerce')
 
     # Filter new/changed records
     latest_timestamp = old_df[timestamp_col].max()
