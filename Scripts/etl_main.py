@@ -1,3 +1,4 @@
+import sys
 from extraction import extract_from_csv
 from extraction import extract_from_mysql
 from transform import get_delta
@@ -19,9 +20,19 @@ def main():
     old_web = extract_from_mysql("web_sales")
     old_pos = extract_from_mysql("pos_orders")
 
+    # Default to incremental if no argument is passed
+    if len(sys.argv) > 1:
+        load_type = sys.argv[1].strip().lower()
+        if load_type not in ['full', 'incremental']:
+            print("Invalid load type. Defaulting to incremental.")
+            load_type = 'incremental'
+    else:
+        print("No load type specified. Defaulting to incremental.")
+        load_type = 'incremental'
+
     # Delta detection
-    delta_web = get_delta(new_web, old_web)
-    delta_pos = get_delta(new_pos, old_pos)
+    delta_web = get_delta(new_web, old_web, load_type=load_type)
+    delta_pos = get_delta(new_pos, old_pos, load_type=load_type)
 
     # Load delta
     if not delta_web.empty:
