@@ -1,16 +1,33 @@
 from extraction import extract_from_csv
+from extraction import extract_from_mysql
+from transform import get_delta
 from loading import load_into_mysql
+from logger import logger_setup
+from config_reader import read_csv_path
 
+logger_setup()
 def main():
-    web_sales_file='C:\\Users\\aaron\\PycharmProjects\\PythonProject\\PythonProject\\Sales_Reporting_Pipeline\\web_sales_data.csv'
-    pos_order_file='C:\\Users\\aaron\\PycharmProjects\\PythonProject\\PythonProject\\Sales_Reporting_Pipeline\\pos_orders_data.csv'
+    csv_path=read_csv_path('Config/csvpath.ini')
+    web_file =csv_path['web_sales_data']
+    pos_file =csv_path['pos_orders_data']
 
-    web_sales_data=extract_from_csv(web_sales_file)
-    pos_order_data=extract_from_csv(pos_order_file)
-    print(3)
-    load_into_mysql(web_sales_data,'web_sales',if_exists='replace')
-    load_into_mysql(pos_order_data,'pos_orders',if_exists='replace')
-    print(4)
+    # Extract new data
+    new_web = extract_from_csv(web_file)
+    new_pos = extract_from_csv(pos_file)
 
-if __name__ == '__main__':
+    # Extract old data from MySQL
+    old_web = extract_from_mysql("web_sales")
+    old_pos = extract_from_mysql("pos_orders")
+
+    # Delta detection
+    delta_web = get_delta(new_web, old_web)
+    delta_pos = get_delta(new_pos, old_pos)
+
+    # Load delta
+    if not delta_web.empty:
+        load_into_mysql(delta_web, "web_sales")
+    if not delta_pos.empty:
+        load_into_mysql(delta_pos, "pos_orders")
+
+if __name__ == "__main__":
     main()

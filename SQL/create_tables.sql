@@ -18,3 +18,4 @@ create table pos_orders(
     OrderDate Date,
     LastUpdated DateTime
 )
+

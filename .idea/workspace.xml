@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
+    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Added 2 scripts:&#10;loading.py and etl_main.py&#10;Able to extract from csv and load into mysql.">
+      <change afterPath="$PROJECT_DIR$/Config/csvpath.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/config_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/transform.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/create_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/etl_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,48 +43,48 @@
     &quot;accountId&quot;: &quot;7798597f-4e14-4273-a959-006798a7e8f1&quot;
   }
 }</component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2xOK2DEO4PKZtBLo5wLmyevX8q3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Database Script.create_tables.sql.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Y (1).executor": "Run",
-    "Python.Y.executor": "Run",
-    "Python.etl_main.executor": "Run",
-    "Python.etl_script (1).executor": "Run",
-    "Python.extract.executor": "Run",
-    "Python.extraction (1).executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Database Script.create_tables.sql.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Y (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Y.executor&quot;: &quot;Run&quot;,
+    &quot;Python.etl_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.etl_script (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.extract.executor&quot;: &quot;Run&quot;,
+    &quot;Python.extraction (1).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "709f366f-c41d-4d0f-8eca-1a540f234afe"
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;709f366f-c41d-4d0f-8eca-1a540f234afe&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline\Scripts" />
       <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline" />
+      <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline\Scripts" />
     </key>
   </component>
   <component name="RunManager" selected="Python.etl_main">
@@ -231,7 +235,9 @@
       <option name="presentableId" value="Default" />
       <updated>1747803470969</updated>
       <workItem from="1747803472045" duration="832000" />
-      <workItem from="1747828133150" duration="17853000" />
+      <workItem from="1747828133150" duration="18787000" />
+      <workItem from="1747975755536" duration="5415000" />
+      <workItem from="1748231675202" duration="9747000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -241,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747897830763</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added 2 scripts:&#10;loading.py and etl_main.py&#10;Able to extract from csv and load into mysql.">
+      <option name="closed" value="true" />
+      <created>1747906943921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747906943921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,14 +263,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Added 2 scripts:&#10;loading.py and etl_main.py&#10;Able to extract from csv and load into mysql." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 2 scripts:&#10;loading.py and etl_main.py&#10;Able to extract from csv and load into mysql." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_script__1_.coverage" NAME="etl_script (1) Coverage Results" MODIFIED="1747904776948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Y__1_.coverage" NAME="Y (1) Coverage Results" MODIFIED="1747891314825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extract.coverage" NAME="extract Coverage Results" MODIFIED="1747891958431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extraction__1_.coverage" NAME="extraction (1) Coverage Results" MODIFIED="1747904991644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
-    <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_main.coverage" NAME="etl_main Coverage Results" MODIFIED="1747906767745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
+    <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_main.coverage" NAME="etl_main Coverage Results" MODIFIED="1748233947023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Y.coverage" NAME="Y Coverage Results" MODIFIED="1747889998628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

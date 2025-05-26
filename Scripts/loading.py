@@ -2,7 +2,8 @@ import pandas as pd
 from db_connect import get_db_engine
 import logging
 
-def load_into_mysql(df,table_name,if_exists=False):
+#Funtion that loads the extracted csv into MySQL Database.
+def load_into_mysql(df,table_name,if_exists='append'):
 
     engine=get_db_engine()
     try:
