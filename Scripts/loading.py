@@ -1,16 +1,40 @@
-import pandas as pd
 from db_connect import get_db_engine
 import logging
+from sqlalchemy import text
+from config_reader import read_query
+
+engine = get_db_engine()
+#Function to Truncate tables.
+def truncate_table(config_path, query_key):
+    try:
+        query = read_query(config_path, query_key)
+        with engine.begin() as con:
+            con.execute(text(query))
+        logging.info(f"Successfully executed truncate: {query_key}")
+        print(f"Truncated table using: {query_key}")
+    except Exception as e:
+        logging.error(f"Error executing truncate `{query_key}`: {e}")
+        print(f"Truncate error for key: {query_key}")
+        exit(1)
 
 #Funtion that loads the extracted csv into MySQL Database.
-def load_into_mysql(df,table_name,if_exists='append'):
-
-    engine=get_db_engine()
+def load_into_table(df,table_name):
     try:
-        df.to_sql(name=table_name,con=engine,if_exists=if_exists,index=False)
-        logging.info('Data successfully loaded in mysql')
-        print(2)
+        df.to_sql(name=table_name,con=engine,if_exists='append',index=False)
+        logging.info(f'Loaded {len(df)} records from {table_name}')
     except Exception as e:
-        logging.error(f'Error loading into MySQL: {e}')
-        print(21)
+        logging.error(f'Error loading into {table_name}: {e}')
+        exit(1)
+
+#Function to merge staging to target
+def merge_staging_to_target(config_path, query_key):
+    try:
+        query = read_query(config_path, query_key)
+        with engine.begin() as con:
+            con.execute(text(query))
+        logging.info(f"Merge query executed: {query_key}")
+        print(f"Merged staging to target using: {query_key}")
+    except Exception as e:
+        logging.error(f"Error executing merge query `{query_key}`: {e}")
+        print(f"Error merging for key: {query_key}")
         exit(1)

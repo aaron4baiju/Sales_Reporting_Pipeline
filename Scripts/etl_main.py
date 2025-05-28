@@ -1,13 +1,24 @@
 import sys
+import pandas as pd
+import logging
 from extraction import extract_from_csv
 from extraction import extract_from_mysql
 from transform import get_delta
-from loading import load_into_mysql
+from loading import load_into_table,truncate_table,merge_staging_to_target
 from logger import logger_setup
 from config_reader import read_csv_path
+from dateutil.parser import parse
 
-logger_setup()
+def try_parse(val):
+    """Safely parse dates using dateutil, returning NaT if invalid."""
+    try:
+        return parse(val)
+    except Exception:
+        return pd.NaT
+
+
 def main():
+    logger_setup()
     csv_path=read_csv_path('Config/csvpath.ini')
     web_file =csv_path['web_sales_data']
     pos_file =csv_path['pos_orders_data']
@@ -15,6 +26,37 @@ def main():
     # Extract new data
     new_web = extract_from_csv(web_file)
     new_pos = extract_from_csv(pos_file)
+
+    # Log original dtypes and samples
+    logging.info(f"Original dtypes for new_web: {new_web[['OrderDate', 'LastUpdated']].dtypes}")
+    logging.info(f"Original dtypes for new_pos: {new_pos[['OrderDate', 'LastUpdated']].dtypes}")
+    logging.info("Sample of original new_web dates:\n" + str(new_web[['OrderDate', 'LastUpdated']].head()))
+    logging.info("Sample of original new_pos dates:\n" + str(new_pos[['OrderDate', 'LastUpdated']].head()))
+
+    #DATE PARSING
+    new_web['OrderDate'] = new_web['OrderDate'].apply(try_parse)
+    new_web['LastUpdated'] = new_web['LastUpdated'].apply(try_parse)
+    new_pos['OrderDate'] = new_pos['OrderDate'].apply(try_parse)
+    new_pos['LastUpdated'] = new_pos['LastUpdated'].apply(try_parse)
+
+    # Log parsed dtype and samples
+    logging.info(f"Dtypes for new_web AFTER conversion: {new_web[['OrderDate', 'LastUpdated']].dtypes}")
+    logging.info(f"Dtypes for new_pos AFTER conversion: {new_pos[['OrderDate', 'LastUpdated']].dtypes}")
+    logging.info("Sample of new_web dates AFTER conversion:\n" + str(new_web[['OrderDate', 'LastUpdated']].head()))
+    logging.info("Sample of new_pos dates AFTER conversion:\n" + str(new_pos[['OrderDate', 'LastUpdated']].head()))
+    logging.info(
+        "Null counts in new_web after conversion:\n" + str(new_web[['OrderDate', 'LastUpdated']].isnull().sum()))
+    logging.info(
+        "Null counts in new_pos after conversion:\n" + str(new_pos[['OrderDate', 'LastUpdated']].isnull().sum()))
+
+
+    # # Convert 'OrderDate' to datetime objects in the desired format
+    # new_web['OrderDate'] = pd.to_datetime(new_web['OrderDate'], dayfirst=True, errors='coerce')
+    # new_pos['OrderDate'] = pd.to_datetime(new_pos['OrderDate'], dayfirst=True, errors='coerce')
+    #
+    # new_web['LastUpdated'] = pd.to_datetime(new_web['LastUpdated'], dayfirst=True, errors='coerce')
+    # new_pos['LastUpdated'] = pd.to_datetime(new_pos['LastUpdated'], dayfirst=True, errors='coerce')
+
 
     # Extract old data from MySQL
     old_web = extract_from_mysql("web_sales")
@@ -27,18 +69,38 @@ def main():
             print("Invalid load type. Defaulting to incremental.")
             load_type = 'incremental'
     else:
-        print("No load type specified. Defaulting to incremental.")
         load_type = 'incremental'
 
-    # Delta detection
-    delta_web = get_delta(new_web, old_web, load_type=load_type)
-    delta_pos = get_delta(new_pos, old_pos, load_type=load_type)
+    #FULL >> truncate -> Load
+    if load_type == 'full':
+        # full_web= get_delta(new_web, old_web, load_type='full')
+        # full_pos = get_delta(new_pos, old_pos, load_type='full')
 
-    # Load delta
-    if not delta_web.empty:
-        load_into_mysql(delta_web, "web_sales")
-    if not delta_pos.empty:
-        load_into_mysql(delta_pos, "pos_orders")
+        truncate_table('Config/queries.ini', 'truncate_web_sales')
+        truncate_table('Config/queries.ini', 'truncate_pos_orders')
+
+        load_into_table(new_web, 'web_sales')
+        load_into_table(new_pos, 'pos_orders')
+
+        # truncate_table('Config/queries.ini', 'truncate_sales_target')
+
+    #INCREMENTAL >> delta -> staging -> merging
+    elif load_type == 'incremental':
+        old_target = extract_from_mysql('sales_target')
+
+        delta_web = get_delta(new_web, old_target[old_target['source'] == 'web'], 'incremental', source='web')
+        delta_pos = get_delta(new_pos, old_target[old_target['source'] == 'pos'], 'incremental', source='pos')
+
+        if not delta_web.empty:
+            truncate_table('Config/queries.ini', 'truncate_web_staging')
+            load_into_table(delta_web, 'stg_web_sales')
+            merge_staging_to_target('Config/queries.ini', 'merge_stg_web_to_target')
+
+        if not delta_pos.empty:
+            truncate_table('Config/queries.ini', 'truncate_pos_staging')
+            load_into_table(delta_pos, 'stg_pos_orders')
+            merge_staging_to_target('Config/queries.ini', 'merge_stg_pos_to_target')
+
 
 if __name__ == "__main__":
     main()

@@ -3,14 +3,14 @@ from db_connect import get_db_engine
 import logging
 
 #Extract from MySQL
-try:
-    def extract_from_csv(file_path):
+def extract_from_csv(file_path):
+    try:
         df1=pd.read_csv(file_path)
         logging.info("Data Extracted from CSV File to DataFrame.")
         print('Extracted data from CSV File')
         return df1
-except Exception as e:
-    logging.error("Error Extracting data fromm CSV",e)
+    except Exception as e:
+        logging.error("Error Extracting data fromm CSV",e)
 
 # Extract existing data from MySQL
 def extract_from_mysql(table_name):

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Added new row in websales csv and succesfully updated in mysql .">
+    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Modified main in such a way that user can tell whether to give full or incr. load depending on their choice. Able to give parameters.">
+      <change afterPath="$PROJECT_DIR$/Config/queries.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/config_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/config_reader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/transform.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +125,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -203,6 +208,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Database Script.create_tables.sql" />
+      <item itemvalue="Python.etl_main" />
+      <item itemvalue="Python.extraction" />
+      <item itemvalue="Python.extraction (1)" />
+      <item itemvalue="Python.Y (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.etl_main" />
@@ -231,7 +243,7 @@
       <workItem from="1747803472045" duration="832000" />
       <workItem from="1747828133150" duration="18787000" />
       <workItem from="1747975755536" duration="5415000" />
-      <workItem from="1748231675202" duration="14469000" />
+      <workItem from="1748231675202" duration="39490000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -265,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748265974074</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modified main in such a way that user can tell whether to give full or incr. load depending on their choice. Able to give parameters.">
+      <option name="closed" value="true" />
+      <created>1748269176505</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748269176505</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,14 +296,15 @@
     <MESSAGE value="Added 2 scripts:&#10;loading.py and etl_main.py&#10;Able to extract from csv and load into mysql." />
     <MESSAGE value="Added 2 scripts:&#10;transform, csvpath.ini, config_reader.py," />
     <MESSAGE value="Added new row in websales csv and succesfully updated in mysql ." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new row in websales csv and succesfully updated in mysql ." />
+    <MESSAGE value="Modified main in such a way that user can tell whether to give full or incr. load depending on their choice. Able to give parameters." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified main in such a way that user can tell whether to give full or incr. load depending on their choice. Able to give parameters." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_script__1_.coverage" NAME="etl_script (1) Coverage Results" MODIFIED="1747904776948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Y__1_.coverage" NAME="Y (1) Coverage Results" MODIFIED="1747891314825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extract.coverage" NAME="extract Coverage Results" MODIFIED="1747891958431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extraction__1_.coverage" NAME="extraction (1) Coverage Results" MODIFIED="1747904991644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
-    <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_main.coverage" NAME="etl_main Coverage Results" MODIFIED="1748233947023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
+    <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_main.coverage" NAME="etl_main Coverage Results" MODIFIED="1748421535631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Y.coverage" NAME="Y Coverage Results" MODIFIED="1747889998628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
