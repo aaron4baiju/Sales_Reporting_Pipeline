@@ -21,19 +21,19 @@ def truncate_table(config_path, query_key):
 def load_into_table(df,table_name):
     try:
         df.to_sql(name=table_name,con=engine,if_exists='append',index=False)
-        logging.info(f'Loaded {len(df)} records from {table_name}')
+        logging.info(f'Loaded {len(df)} records into {table_name}')
     except Exception as e:
         logging.error(f'Error loading into {table_name}: {e}')
         exit(1)
 
 #Function to merge staging to target
-def merge_staging_to_target(config_path, query_key):
+def merge_staging_to_table(config_path, query_key):
     try:
         query = read_query(config_path, query_key)
         with engine.begin() as con:
             con.execute(text(query))
         logging.info(f"Merge query executed: {query_key}")
-        print(f"Merged staging to target using: {query_key}")
+        print(f"Merged staging to table using: {query_key}")
     except Exception as e:
         logging.error(f"Error executing merge query `{query_key}`: {e}")
         print(f"Error merging for key: {query_key}")

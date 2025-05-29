@@ -499,4 +499,6 @@ CustomerID,CustomerName,Region,Product,Quantity,Price,OrderDate,LastUpdated
 127,Charlie,North,Widget A,5,89.93,07-05-2025,07-05-2025 01:00
 163,Alice,East,Widget B,3,142.43,19-05-2025,20-05-2025 04:00
 194,Helen,South,Widget D,3,139.34,04-05-2025,05-05-2025 05:00
-2020,Samuel,North,Widget D,2,136.32,21-05-2025,26-05-2025 18:47
+200,Samuel,North,Widget D,2,136.32,21-05-2025,26-05-2025 18:47
+202,Ava,East,Widget B,4,200.19,28-05-2025,28-05-2025 15:03
+205,Aaron,South,Widget A,5,2003,29-05-2025,29-05-2025 11:16
