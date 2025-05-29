@@ -53,12 +53,6 @@ def main():
     logging.info(
         "Null counts in new_pos after conversion:\n" + str(new_pos[['OrderDate', 'LastUpdated']].isnull().sum()))
 
-    # # Convert 'OrderDate' to datetime objects in the desired format
-    # new_web['OrderDate'] = pd.to_datetime(new_web['OrderDate'], dayfirst=True, errors='coerce')
-    # new_pos['OrderDate'] = pd.to_datetime(new_pos['OrderDate'], dayfirst=True, errors='coerce')
-    #
-    # new_web['LastUpdated'] = pd.to_datetime(new_web['LastUpdated'], dayfirst=True, errors='coerce')
-    # new_pos['LastUpdated'] = pd.to_datetime(new_pos['LastUpdated'], dayfirst=True, errors='coerce')
 
     # Default to incremental if no argument is passed
     if len(sys.argv) > 1:
@@ -81,23 +75,28 @@ def main():
     #INCREMENTAL >> delta -> staging -> merging
     elif load_type == 'incremental':
 
-        #Identify delta records
-        delta_web = get_delta(new_web, old_web)
-        delta_pos = get_delta(new_pos, old_pos)
+        try:
+            #Identify delta records
+            delta_web = get_delta(new_web, old_web, timestamp_col='LastUpdated')
+            print('WEB_SALES_DELTA')
+            print(delta_web)
+            delta_pos = get_delta(new_pos, old_pos, timestamp_col='LastUpdated')
+            print('POS_ORDERS_DELTA')
+            print(delta_pos)
 
-        print(delta_web)
-        print(delta_pos)
+            #Staging and Merging
+            if not delta_web.empty:
+                truncate_table('Config/queries.ini', 'truncate_web_staging')
+                load_into_table(delta_web, 'stg_web_sales')
+                merge_staging_to_table('Config/queries.ini', 'merge_stg_web_to_web_sales')
 
-        # #Staging and Merging
-        # if not delta_web.empty:
-        #     truncate_table('Config/queries.ini', 'truncate_web_staging')
-        #     load_into_table(delta_web, 'stg_web_sales')
-        #     merge_staging_to_table('Config/queries.ini', 'merge_stg_web_to_web_sales')
-        #
-        # if not delta_pos.empty:
-        #     truncate_table('Config/queries.ini', 'truncate_pos_staging')
-        #     load_into_table(delta_pos, 'stg_pos_orders')
-        #     merge_staging_to_table('Config/queries.ini', 'merge_stg_pos_to_pos_orders')
+            if not delta_pos.empty:
+                truncate_table('Config/queries.ini', 'truncate_pos_staging')
+                load_into_table(delta_pos, 'stg_pos_orders')
+                merge_staging_to_table('Config/queries.ini', 'merge_stg_pos_to_pos_orders')
+
+        except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":
