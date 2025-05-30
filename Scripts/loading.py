@@ -38,3 +38,16 @@ def merge_staging_to_table(config_path, query_key):
         logging.error(f"Error executing merge query `{query_key}`: {e}")
         print(f"Error merging for key: {query_key}")
         exit(1)
+
+
+def populate_sales_target(config_path, query_key):
+    try:
+        query = read_query(config_path, query_key)
+        with engine.begin() as con:
+            con.execute(text(query))
+        logging.info(f"Populated target table using: {query_key}")
+        print(f"Populated target table using: {query_key}")
+    except Exception as e:
+        logging.error(f"Error executing populate target `{query_key}`: {e}")
+        print(f"Error populating target table for key: {query_key}")
+        exit(2)

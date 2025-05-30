@@ -501,3 +501,4 @@ CustomerID,CustomerName,Region,Product,Quantity,Price,OrderDate,LastUpdated
 194,Helen,South,Widget D,3,139.34,2025-05-04,2025-05-05 05:00:00
 201,Aaron,East,Widget B,3,142.43,2025-06-30,2025-06-30 04:00:00
 202,Angelo,South,Widget D,3,139.34,2025-06-30,2025-06-30 05:00:00
+203,Aabel,North,Widget A,3,140.00,2025-07-01,2025-07-01 12:47:00

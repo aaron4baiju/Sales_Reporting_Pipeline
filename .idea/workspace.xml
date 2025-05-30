@@ -7,6 +7,11 @@
     <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Incremental working fine. But records not being shown in MySQL records.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/queries.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/queries.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos_orders_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pos_orders_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_sales_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/web_sales_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +244,7 @@
       <workItem from="1747975755536" duration="5415000" />
       <workItem from="1748231675202" duration="43205000" />
       <workItem from="1748493560124" duration="19965000" />
-      <workItem from="1748580791513" duration="969000" />
+      <workItem from="1748580791513" duration="9041000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -313,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748528674466</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Incremental working fine. But records not being shown in MySQL records.">
+      <option name="closed" value="true" />
+      <created>1748581801708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748581801708</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

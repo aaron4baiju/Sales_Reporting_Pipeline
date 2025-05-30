@@ -4,7 +4,7 @@ import logging
 from extraction import extract_from_csv
 from extraction import extract_from_mysql
 from transform import get_delta
-from loading import load_into_table,truncate_table,merge_staging_to_table
+from loading import load_into_table,truncate_table,merge_staging_to_table,populate_sales_target
 from logger import logger_setup
 from config_reader import read_csv_path
 from dateutil.parser import parse
@@ -98,6 +98,8 @@ def main():
         except Exception as e:
             print(e)
 
+    #Populating Target Table
+    populate_sales_target('Config/queries.ini','populate_sales_target')
 
 if __name__ == "__main__":
     main()
