@@ -28,3 +28,4 @@ def get_delta(new_df, old_df, timestamp_col='LastUpdated'):
         return delta_df
 
 
+

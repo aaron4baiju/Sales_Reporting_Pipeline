@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Incremental working fine. But records not being shown in MySQL records.">
+    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Populating Sales_target working fine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/queries.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/queries.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos_orders_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pos_orders_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_sales_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/web_sales_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,7 @@
       <workItem from="1747975755536" duration="5415000" />
       <workItem from="1748231675202" duration="43205000" />
       <workItem from="1748493560124" duration="19965000" />
-      <workItem from="1748580791513" duration="9041000" />
+      <workItem from="1748580791513" duration="12356000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -326,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748581801708</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Populating Sales_target working fine.">
+      <option name="closed" value="true" />
+      <created>1748591156780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748591156780</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +347,8 @@
     <MESSAGE value="FULL Load Working Fine.." />
     <MESSAGE value="Incremental not working.." />
     <MESSAGE value="Incremental working fine. But records not being shown in MySQL records." />
-    <option name="LAST_COMMIT_MESSAGE" value="Incremental working fine. But records not being shown in MySQL records." />
+    <MESSAGE value="Populating Sales_target working fine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Populating Sales_target working fine." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_script__1_.coverage" NAME="etl_script (1) Coverage Results" MODIFIED="1747904776948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />

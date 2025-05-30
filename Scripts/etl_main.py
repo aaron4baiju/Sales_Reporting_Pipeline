@@ -4,7 +4,7 @@ import logging
 from extraction import extract_from_csv
 from extraction import extract_from_mysql
 from transform import get_delta
-from loading import load_into_table,truncate_table,merge_staging_to_table,populate_sales_target
+from loading import load_into_table,truncate_table,merge_staging_to_table,populate_sales_target,summarize_sales_data
 from logger import logger_setup
 from config_reader import read_csv_path
 from dateutil.parser import parse
@@ -100,6 +100,10 @@ def main():
 
     #Populating Target Table
     populate_sales_target('Config/queries.ini','populate_sales_target')
+
+    #Summarize Sales Data using Sales Target
+    truncate_table('Config/queries.ini', 'truncate_sales_summary')
+    summarize_sales_data('Config/queries.ini', 'summarize_sales_data')
 
 if __name__ == "__main__":
     main()

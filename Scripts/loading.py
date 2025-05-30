@@ -51,3 +51,15 @@ def populate_sales_target(config_path, query_key):
         logging.error(f"Error executing populate target `{query_key}`: {e}")
         print(f"Error populating target table for key: {query_key}")
         exit(2)
+
+def summarize_sales_data(config_path, query_key):
+    try:
+        query = read_query(config_path, query_key)
+        with engine.begin() as con:
+            con.execute(text(query))
+        logging.info(f"Summary query executed: {query_key}")
+        print(f"Summary query executed: {query_key}")
+    except Exception as e:
+        logging.error(f"Error executing summary query `{query_key}`: {e}")
+        print(f"Error summary query for key: {query_key}")
+        exit(3)
