@@ -8,6 +8,7 @@ from loading import load_into_table,truncate_table,merge_staging_to_table,popula
 from logger import logger_setup
 from config_reader import read_csv_path
 from dateutil.parser import parse
+from visualize import visualize_daily_revenue
 
 def try_parse(val):
     """Safely parse dates using dateutil, returning NaT if invalid."""
@@ -104,6 +105,9 @@ def main():
     #Summarize Sales Data using Sales Target
     truncate_table('Config/queries.ini', 'truncate_sales_summary')
     summarize_sales_data('Config/queries.ini', 'summarize_sales_data')
+
+    #Visualize Daily Revenue through Sales Summary
+    # visualize_daily_revenue()
 
 if __name__ == "__main__":
     main()

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Populating Sales_target working fine.">
+    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Sales_Summary created and working fine.">
+      <change afterPath="$PROJECT_DIR$/Scripts/visualize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/queries.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/queries.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/loading.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/transform.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,70 +45,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Database Script.create_tables.sql.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.Y (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Y.executor&quot;: &quot;Run&quot;,
-    &quot;Python.etl_main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.etl_script (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.extract.executor&quot;: &quot;Run&quot;,
-    &quot;Python.extraction (1).executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Database Script.create_tables.sql.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Visualize.executor": "Run",
+    "Python.Y (1).executor": "Run",
+    "Python.Y.executor": "Run",
+    "Python.etl_main.executor": "Run",
+    "Python.etl_script (1).executor": "Run",
+    "Python.extract.executor": "Run",
+    "Python.extraction (1).executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;709f366f-c41d-4d0f-8eca-1a540f234afe&quot;
+    "RunConfigurationTargetLRU": [
+      "709f366f-c41d-4d0f-8eca-1a540f234afe"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline" />
       <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline\Scripts" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.etl_main">
+  <component name="RunManager" selected="Python.visualize">
     <configuration name="create_tables.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/SQL/create_tables.sql" />
       <script-mode>FILE</script-mode>
       <data-source id="709f366f-c41d-4d0f-8eca-1a540f234afe" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Y (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Sales_Reporting_Pipeline" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/Y.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="etl_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -205,20 +181,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="visualize" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sales_Reporting_Pipeline" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline\Scripts\visualize.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Database Script.create_tables.sql" />
       <item itemvalue="Python.etl_main" />
       <item itemvalue="Python.extraction" />
       <item itemvalue="Python.extraction (1)" />
-      <item itemvalue="Python.Y (1)" />
+      <item itemvalue="Python.visualize" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.visualize" />
         <item itemvalue="Python.etl_main" />
         <item itemvalue="Python.extraction (1)" />
         <item itemvalue="Python.extraction" />
         <item itemvalue="Database Script.create_tables.sql" />
-        <item itemvalue="Python.extraction" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +241,7 @@
       <workItem from="1747975755536" duration="5415000" />
       <workItem from="1748231675202" duration="43205000" />
       <workItem from="1748493560124" duration="19965000" />
-      <workItem from="1748580791513" duration="12356000" />
+      <workItem from="1748580791513" duration="13858000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -332,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748591156780</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Sales_Summary created and working fine.">
+      <option name="closed" value="true" />
+      <created>1748598705003</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748598705003</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +355,8 @@
     <MESSAGE value="Incremental not working.." />
     <MESSAGE value="Incremental working fine. But records not being shown in MySQL records." />
     <MESSAGE value="Populating Sales_target working fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="Populating Sales_target working fine." />
+    <MESSAGE value="Sales_Summary created and working fine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sales_Summary created and working fine." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_script__1_.coverage" NAME="etl_script (1) Coverage Results" MODIFIED="1747904776948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
@@ -356,6 +364,7 @@
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extract.coverage" NAME="extract Coverage Results" MODIFIED="1747891958431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$extraction__1_.coverage" NAME="extraction (1) Coverage Results" MODIFIED="1747904991644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_main.coverage" NAME="etl_main Coverage Results" MODIFIED="1748505569289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Visualize.coverage" NAME="Visualize Coverage Results" MODIFIED="1748599847674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$Y.coverage" NAME="Y Coverage Results" MODIFIED="1747889998628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
