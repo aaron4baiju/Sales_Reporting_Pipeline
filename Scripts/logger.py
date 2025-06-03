@@ -1,3 +1,5 @@
+#Initiazes the Logger to store Day-to-Day Logs.
+
 import logging
 import os
 import datetime
@@ -15,11 +17,11 @@ def logger_setup(log_dir="logs"):
     if not logging.getLogger().hasHandlers():
         logging.basicConfig(
             filename=log_filename,
-            level=logging.DEBUG,
+            level=logging.INFO,
             format="%(asctime)s - %(levelname)s - %(message)s",
             filemode='a'  # Append mode
         )
     logging.info("\n\n\n\n\n\nLogger initialized.")
 
-    print('Logger Setup Complete')
+
 

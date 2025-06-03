@@ -1,18 +1,16 @@
-import pandas as pd
-from db_connect import get_db_engine
+#Identifies Delta values (NEW or UPDATED records).
+
 import logging
 
 def get_delta(new_df, old_df, timestamp_col='LastUpdated'):
 
-    print("Max timestamp in old_df:", old_df[timestamp_col].max())
-    print("Min timestamp in old_df:", old_df[timestamp_col].min())
-    print("Max timestamp in new_df:", new_df[timestamp_col].max())
-    print("Min timestamp in new_df:", new_df[timestamp_col].min())
-    print("Number of new_df rows > old_df max timestamp:",
-          (new_df[timestamp_col] > old_df[timestamp_col].max()).sum())
+    logging.info(f"Max timestamp in old_df:{ old_df[timestamp_col].max()}")
+    logging.info(f"Min timestamp in old_df:{ old_df[timestamp_col].min()}")
+    logging.info(f"Max timestamp in new_df:{ new_df[timestamp_col].max()}")
+    logging.info(f"Min timestamp in new_df:{ new_df[timestamp_col].min()}")
+    logging.info(f"Number of new_df rows > old_df max timestamp: {(new_df[timestamp_col] > old_df[timestamp_col].max()).sum()}")
 
     # For INCR. LOAD
-    print(f"Performing INCREMENTAL load")
     if old_df.empty:
         logging.info("No existing data found — full load will be performed.")
         return new_df

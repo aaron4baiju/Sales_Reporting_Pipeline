@@ -1,3 +1,5 @@
+#Establishes Database Connection by creating an SQL Engine from SQLAlchemy.
+
 import configparser
 import logging
 from sqlalchemy import create_engine

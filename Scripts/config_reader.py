@@ -1,3 +1,5 @@
+#Read the config file into the main scripts.
+
 import configparser
 import os
 import logging
@@ -11,7 +13,7 @@ def read_csv_path(config_path):
         raise FileNotFoundError(f"{config_path} not found.")
 
     config.read(config_path)
-    print(f"Sections found in INI file: {config.sections()}")
+    logging.info(f"Sections found in INI file: {config.sections()}")
 
     return {
         'web_sales_data': config['CSV Path']['web_sales_data'],
