@@ -11,7 +11,7 @@ def extract_from_csv(file_path):
         logging.info(f"Data Extracted from CSV File to DataFrame {file_path}")
         return df1
     except Exception as e:
-        logging.error("Error Extracting data fromm CSV",e)
+        logging.error(f"Error Extracting data fromm CSV {e}")
 
 # Extract existing data from MySQL
 def extract_from_mysql(table_name):

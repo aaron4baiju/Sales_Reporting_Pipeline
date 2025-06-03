@@ -12,7 +12,7 @@ def get_db_engine():
 
         #Reading Database Credentials from db_config.ini
         config = configparser.ConfigParser()
-        config.read(r"C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline\config\db_config.ini")
+        config.read("Config/db_config.ini")
 
         user=config['DB_Credentials']['user']
         password=config['DB_Credentials']['password']
