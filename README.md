@@ -10,6 +10,7 @@ Design and implement an automated ETL process that:
 - Uses **Pandas** for staging and identifying deltas (new or updated records).
 - Loads only changed records into a consolidated MySQL table: `sales_target`.
 - Generates a **daily sales summary report** grouped by Region, Product, and Order Date.
+- Visualizes the sales summary report on a line graph.
 
 ## Data Sources
 
@@ -41,7 +42,7 @@ A SQL-based summary report that:
 - Shows **daily total revenue** and **quantity sold**
 - Grouped by **Region** and **Order Date**
 
-## 📁 Folder Structure (Suggested)
+## 📁 Project Structure
 
 Sales_Reporting_Pipeline/
 │
