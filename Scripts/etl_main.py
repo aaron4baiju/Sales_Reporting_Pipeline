@@ -116,6 +116,10 @@ def main():
     logging.info('Sales Revenue table visualized.')
 
     print("Execution Completed.")
+    logging.info("Execution Completed.")
+    logging.info(f"{len(new_web)} records found in web_sales table.")
+    logging.info(f"{len(new_pos)} records found in pos_orders table.")
+    logging.info(f"{len(new_web)+len(new_pos)} records found in sales_target table.")
 
 if __name__ == "__main__":
     main()

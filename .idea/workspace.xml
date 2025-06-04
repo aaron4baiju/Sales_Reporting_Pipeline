@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Code Beautification ver1.0">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="b884bbb8-fbf7-47da-a7bc-c02b3c6c4082" name="Changes" comment="Dockerfile added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/db_connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/db_connect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/csvpath.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/csvpath.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/etl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/etl_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos_orders_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pos_orders_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_sales_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/web_sales_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,38 +50,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Database Script.create_tables.sql.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Visualize.executor": "Run",
-    "Python.Y (1).executor": "Run",
-    "Python.Y.executor": "Run",
-    "Python.etl_main.executor": "Run",
-    "Python.etl_script (1).executor": "Run",
-    "Python.extract.executor": "Run",
-    "Python.extraction (1).executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "PyScientificConfigurable",
-    "settings.editor.splitter.proportion": "0.26584673",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Database Script.create_tables.sql.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Visualize.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Y (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Y.executor&quot;: &quot;Run&quot;,
+    &quot;Python.etl_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.etl_script (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.extract.executor&quot;: &quot;Run&quot;,
+    &quot;Python.extraction (1).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;PyScientificConfigurable&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.26584673&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "709f366f-c41d-4d0f-8eca-1a540f234afe"
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;709f366f-c41d-4d0f-8eca-1a540f234afe&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aaron\PycharmProjects\PythonProject\PythonProject\Sales_Reporting_Pipeline" />
@@ -97,6 +100,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -242,7 +248,8 @@
       <workItem from="1748231675202" duration="43205000" />
       <workItem from="1748493560124" duration="19965000" />
       <workItem from="1748580791513" duration="13969000" />
-      <workItem from="1748838887723" duration="18419000" />
+      <workItem from="1748838887723" duration="18493000" />
+      <workItem from="1749012949727" duration="6280000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -356,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748927753493</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Dockerfile added">
+      <option name="closed" value="true" />
+      <created>1748939337224</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748939337224</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +390,8 @@
     <MESSAGE value="Sales_Summary created and working fine." />
     <MESSAGE value="Created a new script visualize.py which holds the code for visualizing daily revenue from sales summary table. But have some system errors in matplotlib." />
     <MESSAGE value="Code Beautification ver1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Beautification ver1.0" />
+    <MESSAGE value="Dockerfile added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sales_Reporting_Pipeline$etl_script__1_.coverage" NAME="etl_script (1) Coverage Results" MODIFIED="1747904776948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
