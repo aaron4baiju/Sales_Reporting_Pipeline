@@ -5,11 +5,11 @@ A mini ETL pipeline built using **Python**, **Pandas**, and **MySQL** to integra
 ## Project Objective
 
 Design and implement an automated ETL process that:
-- Extracts sales data from two sources: a MySQL table (`pos_orders`) and a CSV file (`web_sales.csv`).
+- Extracts sales data from two CSV sources: (`pos_orders`) and (`web_sales.csv`).
 - Supports **full and incremental loads** using a `LastUpdated` column.
 - Uses **Pandas** for staging and identifying deltas (new or updated records).
-- Loads only changed records into a consolidated MySQL table: `sales_fact`.
-- Generates a **daily sales summary report** grouped by Region and Order Date.
+- Loads only changed records into a consolidated MySQL table: `sales_target`.
+- Generates a **daily sales summary report** grouped by Region, Product, and Order Date.
 
 ## Data Sources
 
@@ -18,18 +18,20 @@ Design and implement an automated ETL process that:
 
 ## Final Reporting Table
 
-**Table Name**: `sales_fact`  
+**Table Name**: `sales_target`  
 Stores merged records with the following fields:
-- Customer Info
+- OrderID
+- CustomerID
+- CustomerName
 - Region
 - Product
 - Quantity
 - Price
+- Source
 - Order Date
-- Data Source
 - LastUpdated
 
-## 🛠️ Audit Tracking
+## Audit Tracking
 
 The ETL pipeline maintains a **load audit tracker table** to record the last successful `LastUpdated` timestamp for each source. This supports incremental loading.
 
@@ -39,39 +41,26 @@ A SQL-based summary report that:
 - Shows **daily total revenue** and **quantity sold**
 - Grouped by **Region** and **Order Date**
 
-## ✅ Task Breakdown
-
-### Level 1: Environment Setup
-- Set up the MySQL database and create necessary tables.
-- Install required Python packages (e.g., `pandas`, `sqlalchemy`, `pymysql`, `configparser`).
-
-### Level 2: Data Extraction
-- Extract from:
-  - MySQL table (`pos_orders`)
-  - CSV file (`web_sales.csv`)
-
-### Level 3: Delta Identification
-- Use `LastUpdated` column to detect new/updated rows compared to previous runs.
-
-### Level 4: Merge & Transform
-- Combine data into a single DataFrame.
-- Add data source identifier (POS / WEB).
-
-### Level 5: Data Load
-- Load delta records into `sales_fact` table.
-
-### Level 6: Reporting
-- Generate a SQL query/report summarizing daily sales by Region and Order Date.
-
 ## 📁 Folder Structure (Suggested)
 
 Sales_Reporting_Pipeline/
 │
-├── scripts/
-│ ├── extract.py
-│ ├── transform.py
-│ ├── load.py
-│ └── main_etl.py
+├── Config/
+|   ├── csvpath.ini
+|   ├── db_config.ini
+|   └── queries.ini
+├── logs/
+├── output/
+|   └── daily_revenue.png
+├── Scripts/
+│   ├── config_reader.py
+|   ├── db_connect.py
+|   ├── extraction.py
+|   ├── transform.py
+│   ├── loading.py
+│   ├── logger.py
+|   ├── visualize.py
+│   └── etl_main_etl.py
 │
 ├── data/
 │ └── web_sales.csv
